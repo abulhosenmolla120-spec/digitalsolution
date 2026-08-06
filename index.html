@@ -1,397 +1,700 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Solution - Empowering Business Growth</title>
+    <title>Digital Solution - School Identity & Management Services</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary-orange: #f26522;
+            --navy-dark: #0a192f;
+            --navy-main: #0e2a47;
             --primary-blue: #0d5c9d;
-            --primary-red: #d93829;
-            --dark-blue: #0b2545;
-            --light-bg: #f8fafc;
-            --white: #ffffff;
-            --text-color: #333333;
+            --accent-orange: #f26522;
+            --accent-red: #d93829;
+            --light-bg: #f4f7fa;
+            --card-bg: #ffffff;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             scroll-behavior: smooth;
         }
 
         body {
             background-color: var(--light-bg);
-            color: var(--text-color);
+            color: var(--text-dark);
             line-height: 1.6;
         }
 
-        /* Header & Navigation */
+        /* Top Bar */
+        .top-bar {
+            background: linear-gradient(90deg, var(--accent-orange), var(--accent-red));
+            color: #fff;
+            padding: 8px 15px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        /* Header Navigation */
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
+            background: #ffffff;
+            position: sticky;
             top: 0;
-            width: 100%;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
         }
 
         .navbar {
-            max-width: 1200px;
+            max-width: 1240px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
+            padding: 12px 20px;
         }
 
-        .logo-container {
+        .brand-logo {
             display: flex;
             align-items: center;
             gap: 12px;
             text-decoration: none;
         }
 
-        .logo-svg {
-            width: 45px;
-            height: 45px;
+        .brand-svg {
+            width: 50px;
+            height: 50px;
         }
 
-        .brand-name {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--dark-blue);
-        }
-
-        .brand-name span {
-            color: var(--primary-orange);
-        }
-
-        .nav-links {
+        .brand-title-box {
             display: flex;
-            list-style: none;
-            gap: 25px;
+            flex-direction: column;
         }
 
-        .nav-links a {
+        .brand-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--navy-dark);
+            line-height: 1;
+        }
+
+        .brand-title span {
+            color: var(--accent-orange);
+        }
+
+        .brand-tagline {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-top: 3px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-menu a {
             text-decoration: none;
-            color: var(--dark-blue);
+            color: var(--navy-dark);
             font-weight: 600;
+            font-size: 15px;
             transition: color 0.3s;
         }
 
-        .nav-links a:hover {
-            color: var(--primary-orange);
+        .nav-menu a:hover {
+            color: var(--accent-orange);
         }
 
-        .btn-contact {
-            background: linear-gradient(135deg, var(--primary-orange), var(--primary-red));
-            color: var(--white);
-            padding: 10px 22px;
-            border-radius: 25px;
+        .btn-call {
+            background: var(--navy-dark);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
             text-decoration: none;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(242, 101, 34, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
+            font-weight: 700;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
         }
 
-        .btn-contact:hover {
+        .btn-call:hover {
+            background: var(--accent-orange);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(242, 101, 34, 0.4);
         }
 
         /* Hero Section */
         .hero {
-            padding: 160px 20px 100px;
-            max-width: 1200px;
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-main) 100%);
+            color: #fff;
+            padding: 60px 20px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            max-width: 1240px;
             margin: 0 auto;
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
             align-items: center;
-            justify-content: space-between;
-            gap: 50px;
         }
 
-        .hero-text {
-            flex: 1;
-        }
-
-        .hero-text h1 {
-            font-size: 48px;
-            color: var(--dark-blue);
-            line-height: 1.2;
+        .hero-badge {
+            display: inline-block;
+            background: rgba(242, 101, 34, 0.2);
+            border: 1px solid var(--accent-orange);
+            color: #ff9d6c;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
             margin-bottom: 20px;
         }
 
-        .hero-text h1 span {
-            color: var(--primary-blue);
+        .hero-title {
+            font-size: 46px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 15px;
         }
 
-        .hero-text p {
+        .hero-title span {
+            color: #ff9d6c;
+            background: -webkit-linear-gradient(#ffa600, #f26522);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
             font-size: 18px;
-            color: #555;
+            color: #cbd5e1;
             margin-bottom: 30px;
         }
 
-        .hero-image {
-            flex: 1;
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-red));
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            box-shadow: 0 10px 20px rgba(242, 101, 34, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Mockup ID Cards */
+        .id-cards-wrapper {
             display: flex;
             justify-content: center;
+            gap: 20px;
         }
 
-        .hero-logo-large {
-            width: 320px;
-            height: 320px;
-            filter: drop-shadow(0 15px 30px rgba(13, 92, 157, 0.2));
-            animation: float 4s ease-in-out infinite;
+        .id-card {
+            background: #fff;
+            color: #333;
+            width: 210px;
+            border-radius: 16px;
+            padding: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            position: relative;
+            border-top: 8px solid var(--primary-blue);
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+        .id-card.staff {
+            border-top: 8px solid var(--accent-orange);
         }
 
-        /* Services Section */
-        .services {
-            background-color: var(--white);
-            padding: 90px 20px;
+        .id-holder {
+            width: 40px;
+            height: 12px;
+            background: #cbd5e1;
+            margin: -23px auto 10px;
+            border-radius: 4px;
         }
 
-        .section-title {
+        .id-card-type {
             text-align: center;
-            margin-bottom: 60px;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--navy-dark);
+            margin-bottom: 10px;
         }
 
-        .section-title h2 {
-            font-size: 36px;
-            color: var(--dark-blue);
-        }
-
-        .section-title div {
-            width: 70px;
-            height: 4px;
-            background: var(--primary-orange);
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
-
-        .services-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: var(--light-bg);
-            padding: 35px 25px;
-            border-radius: 15px;
-            text-align: center;
-            border: 1px solid #eef2f5;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-        }
-
-        .service-icon {
-            width: 65px;
-            height: 65px;
-            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
-            color: var(--white);
-            border-radius: 50%;
+        .id-avatar {
+            width: 75px;
+            height: 75px;
+            border-radius: 12px;
+            background: #e2e8f0;
+            margin: 0 auto 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 26px;
-            margin: 0 auto 20px;
+            font-size: 32px;
+            color: var(--navy-main);
+        }
+
+        .id-info {
+            text-align: center;
+        }
+
+        .id-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--navy-dark);
+        }
+
+        .id-detail {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .id-barcode {
+            margin-top: 10px;
+            height: 18px;
+            background: repeating-linear-gradient(90deg, #000, #000 2px, #fff 2px, #fff 4px);
+            border-radius: 2px;
+        }
+
+        /* Key Features Bar */
+        .key-features-bar {
+            background: #fff;
+            margin-top: -40px;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            position: relative;
+            z-index: 10;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(13, 92, 157, 0.1);
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .feature-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--navy-dark);
+        }
+
+        /* Section Layout */
+        .section {
+            padding: 80px 20px;
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-subtitle {
+            color: var(--accent-orange);
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            color: var(--navy-dark);
+            font-weight: 800;
+            margin-top: 5px;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+            border-color: var(--accent-orange);
+        }
+
+        .service-card-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--navy-main), var(--primary-blue));
+            color: #fff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 20px;
         }
 
         .service-card h3 {
-            color: var(--dark-blue);
-            margin-bottom: 12px;
-            font-size: 20px;
+            font-size: 18px;
+            color: var(--navy-dark);
+            margin-bottom: 10px;
         }
 
-        /* Stats/Features Banner */
-        .features {
-            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
-            color: var(--white);
-            padding: 70px 20px;
-            text-align: center;
-        }
-
-        .features-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .stat-item h3 {
-            font-size: 42px;
-            color: var(--primary-orange);
+        .service-card p {
+            font-size: 14px;
+            color: var(--text-muted);
         }
 
         /* Contact Section */
-        .contact {
-            padding: 90px 20px;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
         .contact-box {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            background: var(--navy-dark);
+            color: #fff;
+            border-radius: 24px;
+            padding: 45px 30px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
         }
 
-        /* Footer */
+        .contact-info-col h3 {
+            font-size: 28px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .contact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .contact-icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-orange);
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .contact-details span {
+            display: block;
+            font-size: 12px;
+            color: #94a3b8;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .contact-details a, .contact-details p {
+            color: #fff;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .school-partner-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .partner-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background: var(--accent-orange);
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
         footer {
-            background: var(--dark-blue);
-            color: var(--white);
-            padding: 30px 20px;
+            background: #061121;
+            color: #94a3b8;
+            padding: 25px 20px;
             text-align: center;
             font-size: 14px;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding-top: 120px;
+        @media (max-width: 900px) {
+            .hero-container, .contact-box {
+                grid-template-columns: 1fr;
             }
-            .hero-text h1 { font-size: 34px; }
-            .nav-links { display: none; }
+            .nav-menu { display: none; }
+            .hero-title { font-size: 34px; }
+            .id-cards-wrapper { flex-wrap: wrap; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
+    <!-- Top Bar -->
+    <div class="top-bar">
+        ⚡ FAST DELIVERY • PREMIUM QUALITY • TRUSTED SCHOOL PARTNER
+    </div>
+
+    <!-- Header -->
     <header>
         <div class="navbar">
-            <a href="#" class="logo-container">
-                <!-- SVG Logo matching your image -->
-                <svg class="logo-svg" viewBox="0 0 200 200">
-                    <path d="M100,20 A80,80 0 1,1 20,100" fill="none" stroke="#f26522" stroke-width="18" stroke-dasharray="15 8" />
-                    <path d="M100,20 A80,80 0 0,1 180,100" fill="none" stroke="#d93829" stroke-width="18" stroke-dasharray="15 8" />
+            <a href="#" class="brand-logo">
+                <svg class="brand-svg" viewBox="0 0 200 200">
+                    <path d="M100,20 A80,80 0 1,1 20,100" fill="none" stroke="#f26522" stroke-width="18" stroke-dasharray="16 8" />
+                    <path d="M100,20 A80,80 0 0,1 180,100" fill="none" stroke="#d93829" stroke-width="18" stroke-dasharray="16 8" />
                     <path d="M25,120 C50,50 150,40 175,25" fill="none" stroke="#0d5c9d" stroke-width="18" stroke-linecap="round" />
                     <polygon points="175,25 150,25 170,45" fill="#0d5c9d" />
                     <rect x="65" y="100" width="16" height="50" fill="#0d5c9d" rx="3"/>
                     <rect x="92" y="85" width="16" height="65" fill="#0d5c9d" rx="3"/>
                     <rect x="119" y="70" width="16" height="80" fill="#f26522" rx="3"/>
                 </svg>
-                <div class="brand-name">Digital <span>Solution</span></div>
+                <div class="brand-title-box">
+                    <div class="brand-title">DIGITAL <span>SOLUTION</span></div>
+                    <div class="brand-tagline">School Identity & Management Services</div>
+                </div>
             </a>
-            <ul class="nav-links">
-                <li><a href="#home">হোম</a></li>
-                <li><a href="#services">সার্ভিসসমূহ</a></li>
-                <li><a href="#about">আমাদের সম্পর্কে</a></li>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="#contact" class="btn-contact">যোগাযোগ করুন</a>
+            <a href="tel:8927230778" class="btn-call">
+                <i class="fas fa-phone-alt"></i> 8927230778
+            </a>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-text">
-            <h1>আপনার বিজনেসের <span>ডিজিটাল গ্রোথ</span> সুনিশ্চিত করুন</h1>
-            <p>আমরা প্রদান করি আধুনিক টেকনোলজি, ওয়েবসাইট ডেভেলপমেন্ট এবং সর্বাধুনিক আইটি সার্ভিস। আপনার ব্যবসাকে নতুন উচ্চতায় নিয়ে যেতে আমরা বদ্ধপরিকর।</p>
-            <a href="#services" class="btn-contact" style="padding: 14px 30px; font-size: 16px;">এক্সপ্লোর করুন</a>
-        </div>
-        <div class="hero-image">
-            <svg class="hero-logo-large" viewBox="0 0 200 200">
-                <path d="M100,20 A80,80 0 1,1 20,100" fill="none" stroke="#f26522" stroke-width="16" stroke-dasharray="18 8" />
-                <path d="M100,20 A80,80 0 0,1 180,100" fill="none" stroke="#d93829" stroke-width="16" stroke-dasharray="18 8" />
-                <path d="M20,125 C45,55 145,45 175,20" fill="none" stroke="#0d5c9d" stroke-width="18" stroke-linecap="round" />
-                <polygon points="175,20 145,22 168,45" fill="#0d5c9d" />
-                <rect x="65" y="100" width="16" height="50" fill="#0d5c9d" rx="3"/>
-                <rect x="92" y="85" width="16" height="65" fill="#0d5c9d" rx="3"/>
-                <rect x="119" y="70" width="16" height="80" fill="url(#grad1)" rx="3"/>
-                <defs>
-                    <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color:#f26522;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#d93829;stop-opacity:1" />
-                    </linearGradient>
-                </defs>
-            </svg>
+        <div class="hero-container">
+            <div>
+                <span class="hero-badge">★ SINGLE & BULK ORDERS ACCEPTED ★</span>
+                <h1 class="hero-title">PVC SCHOOL<br><span>ID CARD PRINTING</span></h1>
+                <p class="hero-subtitle">High-quality Student ID Cards, Staff ID Cards, QR Attendance System & Complete School Management Solutions.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">Order Now</a>
+                    <a href="https://wa.me/918927230778" target="_blank" class="btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Us
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mockup ID Cards -->
+            <div class="id-cards-wrapper">
+                <div class="id-card">
+                    <div class="id-holder"></div>
+                    <div class="id-card-type">STUDENT ID CARD</div>
+                    <div class="id-avatar"><i class="fas fa-user-graduate"></i></div>
+                    <div class="id-info">
+                        <div class="id-name">Rohan Sharma</div>
+                        <div class="id-detail">Class: VIII (B) | Roll: 25</div>
+                    </div>
+                    <div class="id-barcode"></div>
+                </div>
+                
+                <div class="id-card staff">
+                    <div class="id-holder"></div>
+                    <div class="id-card-type" style="color: var(--accent-orange);">STAFF ID CARD</div>
+                    <div class="id-avatar"><i class="fas fa-user-tie"></i></div>
+                    <div class="id-info">
+                        <div class="id-name">Priya Verma</div>
+                        <div class="id-detail">Teacher | Science Dept</div>
+                    </div>
+                    <div class="id-barcode"></div>
+                </div>
+            </div>
         </div>
     </section>
+
+    <!-- Key Features Bar -->
+    <div class="key-features-bar">
+        <div class="feature-item">
+            <div class="feature-icon"><i class="fas fa-qrcode"></i></div>
+            <div><div class="feature-title">QR Attendance System</div></div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon"><i class="fas fa-comment-dots"></i></div>
+            <div><div class="feature-title">SMS Panel Service</div></div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon"><i class="fas fa-laptop-code"></i></div>
+            <div><div class="feature-title">School Management Software</div></div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon"><i class="fas fa-id-card"></i></div>
+            <div><div class="feature-title">Registration Support</div></div>
+        </div>
+    </div>
 
     <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="section-title">
-            <h2>আমাদের সেবাসমূহ</h2>
-            <div></div>
+    <section class="section" id="services">
+        <div class="section-header">
+            <div class="section-subtitle">What We Offer</div>
+            <h2 class="section-title">Our Premium Services</h2>
         </div>
+        
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon"><i class="fas fa-code"></i></div>
-                <h3>ওয়েবসাইট ডিজাইন</h3>
-                <p>রেসপন্সিভ ও ফাস্ট লোডিং ওয়েবসাইট তৈরি করা যা সব ডিভাইসে সুন্দর দেখায়।</p>
+                <div class="service-card-icon"><i class="fas fa-paint-brush"></i></div>
+                <h3>Professional Design</h3>
+                <p>Customized, elegant, and standard ID card designs tailored to your school's branding and requirements.</p>
             </div>
+
             <div class="service-card">
-                <div class="service-icon" style="background: linear-gradient(135deg, var(--primary-orange), var(--primary-red));"><i class="fas fa-chart-line"></i></div>
-                <h3>ডিজিটাল মার্কেটিং</h3>
-                <p>সঠিক অডিয়েন্সের কাছে বিজনেসের বার্তা পৌঁছে দিয়ে বিক্রয় ও পরিচিতি বৃদ্ধি।</p>
+                <div class="service-card-icon" style="background: linear-gradient(135deg, var(--accent-orange), var(--accent-red));">
+                    <i class="fas fa-print"></i>
+                </div>
+                <h3>Premium PVC Printing</h3>
+                <p>High-definition, waterproof, scratch-resistant PVC cards ensuring maximum durability for students and staff.</p>
             </div>
+
             <div class="service-card">
-                <div class="service-icon"><i class="fas fa-cogs"></i></div>
-                <h3>আইটি কনসালটেন্সি</h3>
-                <p>আপনার ব্যবসাকে অটোমেট ও আধুনিক করার প্রযুক্তিগত পরামর্শ ও গাইডলাইন।</p>
+                <div class="service-card-icon"><i class="fas fa-boxes-packing"></i></div>
+                <h3>Bulk School Orders</h3>
+                <p>Equipped to handle bulk printing orders for large schools and institutions with super-fast turnaround times.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-card-icon"><i class="fas fa-truck-fast"></i></div>
+                <h3>Doorstep School Service</h3>
+                <p>Hassle-free data collection, photo shoots, and doorstep delivery directly to your school campus.</p>
             </div>
         </div>
     </section>
 
-    <!-- Banner -->
-    <section class="features">
-        <div class="features-container">
-            <div class="stat-item">
-                <h3>১০০%</h3>
-                <p>কোয়ালিটি সার্ভিস</p>
-            </div>
-            <div class="stat-item">
-                <h3>২৪/৭</h3>
-                <p>কাস্টমার সাপোর্ট</p>
-            </div>
-            <div class="stat-item">
-                <h3>ফাস্ট</h3>
-                <p>ডেলিভারি সময়</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <!-- Contact & Info Section -->
+    <section class="section" id="contact">
         <div class="contact-box">
-            <h2 style="color: var(--dark-blue); margin-bottom: 15px;">আমাদের সাথে যোগাযোগ করুন</h2>
-            <p style="margin-bottom: 25px; color: #666;">আপনার ব্যবসার প্রয়োজনের কথা আমাদের জানান। আমরা দ্রুত সমাধান দেব।</p>
-            <p style="font-size: 18px; font-weight: 600; color: var(--primary-orange);">
-                <i class="fas fa-globe"></i> www.digitalsolution.biz
-            </p>
+            <div class="contact-info-col">
+                <h3>Get In Touch</h3>
+                <p style="color: #cbd5e1; margin-bottom: 25px;">Contact us today for bulk pricing, sample cards, and complete school management setup.</p>
+                
+                <ul class="contact-list">
+                    <li class="contact-item">
+                        <div class="contact-icon-box"><i class="fas fa-phone-alt"></i></div>
+                        <div class="contact-details">
+                            <span>Phone Number</span>
+                            <a href="tel:8927230778">8927230778</a> / <a href="tel:9064090836">90640 90836</a>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <div class="contact-icon-box"><i class="fas fa-location-dot"></i></div>
+                        <div class="contact-details">
+                            <span>Office Address</span>
+                            <p>Rampur Bazar Road, Near Perfect Children Academy,<br>North 24 Parganas, West Bengal - 743329</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="school-partner-card">
+                <h4 style="font-size: 20px; margin-bottom: 12px; color: #fff;">Your Trusted School Partner</h4>
+                <p style="color: #cbd5e1; font-size: 14px;">We provide end-to-end identity card solutions and digital software panels for educational institutions.</p>
+                <div class="partner-tags">
+                    <span class="tag">Student ID</span>
+                    <span class="tag">Staff ID</span>
+                    <span class="tag">SMS Panel</span>
+                    <span class="tag">Software</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Digital Solution. All rights reserved.</p>
+        <p>&copy; 2026 Digital Solution. All Rights Reserved. | Trusted School Partner</p>
     </footer>
 
 </body>
