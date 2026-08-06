@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Solution - Empowering Business Growth</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-orange: #f26522;
+            --primary-blue: #0d5c9d;
+            --primary-red: #d93829;
+            --dark-blue: #0b2545;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --text-color: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-svg {
+            width: 45px;
+            height: 45px;
+        }
+
+        .brand-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--dark-blue);
+        }
+
+        .brand-name span {
+            color: var(--primary-orange);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-blue);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .btn-contact {
+            background: linear-gradient(135deg, var(--primary-orange), var(--primary-red));
+            color: var(--white);
+            padding: 10px 22px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(242, 101, 34, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-contact:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(242, 101, 34, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 20px 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            color: var(--dark-blue);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 span {
+            color: var(--primary-blue);
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-logo-large {
+            width: 320px;
+            height: 320px;
+            filter: drop-shadow(0 15px 30px rgba(13, 92, 157, 0.2));
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--white);
+            padding: 90px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--dark-blue);
+        }
+
+        .section-title div {
+            width: 70px;
+            height: 4px;
+            background: var(--primary-orange);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--light-bg);
+            padding: 35px 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #eef2f5;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+
+        .service-icon {
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin: 0 auto 20px;
+        }
+
+        .service-card h3 {
+            color: var(--dark-blue);
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        /* Stats/Features Banner */
+        .features {
+            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            color: var(--white);
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .stat-item h3 {
+            font-size: 42px;
+            color: var(--primary-orange);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 90px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-box {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 120px;
+            }
+            .hero-text h1 { font-size: 34px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo-container">
+                <!-- SVG Logo matching your image -->
+                <svg class="logo-svg" viewBox="0 0 200 200">
+                    <path d="M100,20 A80,80 0 1,1 20,100" fill="none" stroke="#f26522" stroke-width="18" stroke-dasharray="15 8" />
+                    <path d="M100,20 A80,80 0 0,1 180,100" fill="none" stroke="#d93829" stroke-width="18" stroke-dasharray="15 8" />
+                    <path d="M25,120 C50,50 150,40 175,25" fill="none" stroke="#0d5c9d" stroke-width="18" stroke-linecap="round" />
+                    <polygon points="175,25 150,25 170,45" fill="#0d5c9d" />
+                    <rect x="65" y="100" width="16" height="50" fill="#0d5c9d" rx="3"/>
+                    <rect x="92" y="85" width="16" height="65" fill="#0d5c9d" rx="3"/>
+                    <rect x="119" y="70" width="16" height="80" fill="#f26522" rx="3"/>
+                </svg>
+                <div class="brand-name">Digital <span>Solution</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">হোম</a></li>
+                <li><a href="#services">সার্ভিসসমূহ</a></li>
+                <li><a href="#about">আমাদের সম্পর্কে</a></li>
+            </ul>
+            <a href="#contact" class="btn-contact">যোগাযোগ করুন</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h1>আপনার বিজনেসের <span>ডিজিটাল গ্রোথ</span> সুনিশ্চিত করুন</h1>
+            <p>আমরা প্রদান করি আধুনিক টেকনোলজি, ওয়েবসাইট ডেভেলপমেন্ট এবং সর্বাধুনিক আইটি সার্ভিস। আপনার ব্যবসাকে নতুন উচ্চতায় নিয়ে যেতে আমরা বদ্ধপরিকর।</p>
+            <a href="#services" class="btn-contact" style="padding: 14px 30px; font-size: 16px;">এক্সপ্লোর করুন</a>
+        </div>
+        <div class="hero-image">
+            <svg class="hero-logo-large" viewBox="0 0 200 200">
+                <path d="M100,20 A80,80 0 1,1 20,100" fill="none" stroke="#f26522" stroke-width="16" stroke-dasharray="18 8" />
+                <path d="M100,20 A80,80 0 0,1 180,100" fill="none" stroke="#d93829" stroke-width="16" stroke-dasharray="18 8" />
+                <path d="M20,125 C45,55 145,45 175,20" fill="none" stroke="#0d5c9d" stroke-width="18" stroke-linecap="round" />
+                <polygon points="175,20 145,22 168,45" fill="#0d5c9d" />
+                <rect x="65" y="100" width="16" height="50" fill="#0d5c9d" rx="3"/>
+                <rect x="92" y="85" width="16" height="65" fill="#0d5c9d" rx="3"/>
+                <rect x="119" y="70" width="16" height="80" fill="url(#grad1)" rx="3"/>
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#f26522;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#d93829;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>আমাদের সেবাসমূহ</h2>
+            <div></div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-code"></i></div>
+                <h3>ওয়েবসাইট ডিজাইন</h3>
+                <p>রেসপন্সিভ ও ফাস্ট লোডিং ওয়েবসাইট তৈরি করা যা সব ডিভাইসে সুন্দর দেখায়।</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon" style="background: linear-gradient(135deg, var(--primary-orange), var(--primary-red));"><i class="fas fa-chart-line"></i></div>
+                <h3>ডিজিটাল মার্কেটিং</h3>
+                <p>সঠিক অডিয়েন্সের কাছে বিজনেসের বার্তা পৌঁছে দিয়ে বিক্রয় ও পরিচিতি বৃদ্ধি।</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-cogs"></i></div>
+                <h3>আইটি কনসালটেন্সি</h3>
+                <p>আপনার ব্যবসাকে অটোমেট ও আধুনিক করার প্রযুক্তিগত পরামর্শ ও গাইডলাইন।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner -->
+    <section class="features">
+        <div class="features-container">
+            <div class="stat-item">
+                <h3>১০০%</h3>
+                <p>কোয়ালিটি সার্ভিস</p>
+            </div>
+            <div class="stat-item">
+                <h3>২৪/৭</h3>
+                <p>কাস্টমার সাপোর্ট</p>
+            </div>
+            <div class="stat-item">
+                <h3>ফাস্ট</h3>
+                <p>ডেলিভারি সময়</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-box">
+            <h2 style="color: var(--dark-blue); margin-bottom: 15px;">আমাদের সাথে যোগাযোগ করুন</h2>
+            <p style="margin-bottom: 25px; color: #666;">আপনার ব্যবসার প্রয়োজনের কথা আমাদের জানান। আমরা দ্রুত সমাধান দেব।</p>
+            <p style="font-size: 18px; font-weight: 600; color: var(--primary-orange);">
+                <i class="fas fa-globe"></i> www.digitalsolution.biz
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Digital Solution. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
