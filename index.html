@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Solution - School Identity & Management Services</title>
+    
+    <!-- ========================================== -->
+    <!-- [GOOGLE SEARCH CONSOLE VERIFICATION TAG] -->
+    <!-- ========================================== -->
+    <meta name="google-site-verification" content="lC6SGUfCKc-dZbOBNp6JpU3u-_zF4aLVv0AQoXTXoS0" />
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome Icons -->
@@ -36,7 +42,7 @@
             line-height: 1.6;
         }
 
-        /* Top Bar */
+        /* Top Notification Bar */
         .top-bar {
             background: linear-gradient(90deg, var(--accent-orange), var(--accent-red));
             color: #fff;
@@ -72,9 +78,11 @@
             text-decoration: none;
         }
 
-        .brand-svg {
+        /* [LOGO IMAGE STYLE SECTION] */
+        .brand-img {
             width: 50px;
             height: 50px;
+            object-fit: contain;
         }
 
         .brand-title-box {
@@ -230,79 +238,27 @@
             transform: translateY(-3px);
         }
 
-        /* Mockup ID Cards */
+        /* ========================================== */
+        /* [ID CARDS IMAGE CONTAINER SECTION]         */
+        /* ========================================== */
         .id-cards-wrapper {
             display: flex;
             justify-content: center;
             gap: 20px;
         }
 
-        .id-card {
-            background: #fff;
-            color: #333;
-            width: 210px;
-            border-radius: 16px;
-            padding: 15px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            position: relative;
-            border-top: 8px solid var(--primary-blue);
-        }
-
-        .id-card.staff {
-            border-top: 8px solid var(--accent-orange);
-        }
-
-        .id-holder {
-            width: 40px;
-            height: 12px;
-            background: #cbd5e1;
-            margin: -23px auto 10px;
-            border-radius: 4px;
-        }
-
-        .id-card-type {
-            text-align: center;
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            color: var(--navy-dark);
-            margin-bottom: 10px;
-        }
-
-        .id-avatar {
-            width: 75px;
-            height: 75px;
+        .real-id-card-img {
+            width: 220px;
+            height: auto;
             border-radius: 12px;
-            background: #e2e8f0;
-            margin: 0 auto 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            color: var(--navy-main);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            object-fit: cover;
+            border: 2px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s;
         }
 
-        .id-info {
-            text-align: center;
-        }
-
-        .id-name {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--navy-dark);
-        }
-
-        .id-detail {
-            font-size: 11px;
-            color: var(--text-muted);
-            margin-top: 2px;
-        }
-
-        .id-barcode {
-            margin-top: 10px;
-            height: 18px;
-            background: repeating-linear-gradient(90deg, #000, #000 2px, #fff 2px, #fff 4px);
-            border-radius: 2px;
+        .real-id-card-img:hover {
+            transform: translateY(-5px);
         }
 
         /* Key Features Bar */
@@ -313,7 +269,7 @@
             margin-left: auto;
             margin-right: auto;
             border-radius: 16px;
-            padding: 25px;
+            padding: 30px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             position: relative;
             z-index: 10;
@@ -329,8 +285,8 @@
         }
 
         .feature-icon {
-            width: 48px;
-            height: 48px;
+            width: 50px;
+            height: 50px;
             border-radius: 12px;
             background: rgba(13, 92, 157, 0.1);
             color: var(--primary-blue);
@@ -377,7 +333,7 @@
         /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px;
         }
 
@@ -396,15 +352,15 @@
         }
 
         .service-card-icon {
-            width: 55px;
-            height: 55px;
+            width: 60px;
+            height: 60px;
             background: linear-gradient(135deg, var(--navy-main), var(--primary-blue));
             color: #fff;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 22px;
+            font-size: 24px;
             margin-bottom: 20px;
         }
 
@@ -419,14 +375,56 @@
             color: var(--text-muted);
         }
 
-        /* Contact Section */
+        /* ========================================== */
+        /* [SCHOOL SOFTWARE DEMO / TRIAL SECTION]     */
+        /* ========================================== */
+        .demo-trial-section {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: #fff;
+            padding: 50px 30px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 40px auto;
+            max-width: 1240px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .demo-trial-section h3 {
+            font-size: 26px;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+
+        .demo-trial-section p {
+            font-size: 16px;
+            color: #cbd5e1;
+            margin-bottom: 25px;
+        }
+
+        .btn-demo {
+            background: var(--accent-orange);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .btn-demo:hover {
+            transform: scale(1.05);
+            background: #d9531b;
+        }
+
+        /* Contact & Info Grid */
         .contact-box {
             background: var(--navy-dark);
             color: #fff;
             border-radius: 24px;
-            padding: 45px 30px;
+            padding: 50px 30px;
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
+            grid-template-columns: 1fr 1fr;
             gap: 40px;
         }
 
@@ -503,44 +501,48 @@
             font-weight: 700;
         }
 
+        /* Footer */
         footer {
             background: #061121;
             color: #94a3b8;
-            padding: 25px 20px;
+            padding: 30px 20px;
             text-align: center;
             font-size: 14px;
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
+        /* Responsive */
         @media (max-width: 900px) {
             .hero-container, .contact-box {
                 grid-template-columns: 1fr;
             }
-            .nav-menu { display: none; }
-            .hero-title { font-size: 34px; }
-            .id-cards-wrapper { flex-wrap: wrap; }
+            .nav-menu {
+                display: none;
+            }
+            .hero-title {
+                font-size: 34px;
+            }
+            .id-cards-wrapper {
+                flex-wrap: wrap;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Bar -->
+    <!-- Top Banner -->
     <div class="top-bar">
         ⚡ FAST DELIVERY • PREMIUM QUALITY • TRUSTED SCHOOL PARTNER
     </div>
 
-    <!-- Header -->
+    <!-- ========================================== -->
+    <!-- [HEADER & BRAND LOGO SECTION]              -->
+    <!-- ========================================== -->
     <header>
         <div class="navbar">
             <a href="#" class="brand-logo">
-                <svg class="brand-svg" viewBox="0 0 200 200">
-                    <path d="M100,20 A80,80 0 1,1 20,100" fill="none" stroke="#f26522" stroke-width="18" stroke-dasharray="16 8" />
-                    <path d="M100,20 A80,80 0 0,1 180,100" fill="none" stroke="#d93829" stroke-width="18" stroke-dasharray="16 8" />
-                    <path d="M25,120 C50,50 150,40 175,25" fill="none" stroke="#0d5c9d" stroke-width="18" stroke-linecap="round" />
-                    <polygon points="175,25 150,25 170,45" fill="#0d5c9d" />
-                    <rect x="65" y="100" width="16" height="50" fill="#0d5c9d" rx="3"/>
-                    <rect x="92" y="85" width="16" height="65" fill="#0d5c9d" rx="3"/>
-                    <rect x="119" y="70" width="16" height="80" fill="#f26522" rx="3"/>
-                </svg>
+                <!-- লোগো ইমেজ ফাইলের নাম 'logo.png' রাখা হয়েছে -->
+                <img src="logo.png" alt="Digital Solution Logo" class="brand-img">
                 <div class="brand-title-box">
                     <div class="brand-title">DIGITAL <span>SOLUTION</span></div>
                     <div class="brand-tagline">School Identity & Management Services</div>
@@ -549,6 +551,7 @@
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#demo">Software Demo</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <a href="tel:8927230778" class="btn-call">
@@ -563,7 +566,7 @@
             <div>
                 <span class="hero-badge">★ SINGLE & BULK ORDERS ACCEPTED ★</span>
                 <h1 class="hero-title">PVC SCHOOL<br><span>ID CARD PRINTING</span></h1>
-                <p class="hero-subtitle">High-quality Student ID Cards, Staff ID Cards, QR Attendance System & Complete School Management Solutions.</p>
+                <p class="hero-subtitle">High-quality Student ID Cards, Staff ID Cards, QR Attendance System & Complete School Management Software Solutions.</p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn-primary">Order Now</a>
                     <a href="https://wa.me/918927230778" target="_blank" class="btn-whatsapp">
@@ -572,29 +575,15 @@
                 </div>
             </div>
             
-            <!-- Mockup ID Cards -->
+            <!-- ========================================== -->
+            <!-- [REAL ID CARDS IMAGES SECTION]             -->
+            <!-- ========================================== -->
             <div class="id-cards-wrapper">
-                <div class="id-card">
-                    <div class="id-holder"></div>
-                    <div class="id-card-type">STUDENT ID CARD</div>
-                    <div class="id-avatar"><i class="fas fa-user-graduate"></i></div>
-                    <div class="id-info">
-                        <div class="id-name">Rohan Sharma</div>
-                        <div class="id-detail">Class: VIII (B) | Roll: 25</div>
-                    </div>
-                    <div class="id-barcode"></div>
-                </div>
+                <!-- প্রথম আইডি কার্ডের ছবি: id-card-1.png নামে আপলোড করবেন -->
+                <img src="id-card-1.png" alt="Student ID Card" class="real-id-card-img">
                 
-                <div class="id-card staff">
-                    <div class="id-holder"></div>
-                    <div class="id-card-type" style="color: var(--accent-orange);">STAFF ID CARD</div>
-                    <div class="id-avatar"><i class="fas fa-user-tie"></i></div>
-                    <div class="id-info">
-                        <div class="id-name">Priya Verma</div>
-                        <div class="id-detail">Teacher | Science Dept</div>
-                    </div>
-                    <div class="id-barcode"></div>
-                </div>
+                <!-- দ্বিতীয় আইডি কার্ডের ছবি: id-card-2.png নামে আপলোড করবেন -->
+                <img src="id-card-2.png" alt="Staff ID Card" class="real-id-card-img">
             </div>
         </div>
     </section>
@@ -655,12 +644,24 @@
         </div>
     </section>
 
+    <!-- ========================================== -->
+    <!-- [SCHOOL SOFTWARE DEMO / TRIAL OPTION]      -->
+    <!-- ========================================== -->
+    <div class="section" style="padding-top: 0; padding-bottom: 20px;" id="demo">
+        <div class="demo-trial-section">
+            <h3>Explore Our School Management Software</h3>
+            <p>Get a live trial demo and experience our automated QR attendance & SMS panel system.</p>
+            <!-- এখানে আপনার ট্রায়াল বা ডেমো ওয়েবসাইটের লিঙ্ক বসাতে পারবেন -->
+            <a href="https://wa.me/918927230778?text=I%20want%20School%20Software%20Demo" target="_blank" class="btn-demo">Request Software Demo</a>
+        </div>
+    </div>
+
     <!-- Contact & Info Section -->
     <section class="section" id="contact">
         <div class="contact-box">
             <div class="contact-info-col">
                 <h3>Get In Touch</h3>
-                <p style="color: #cbd5e1; margin-bottom: 25px;">Contact us today for bulk pricing, sample cards, and complete school management setup.</p>
+                <p style="color: #cbd5e1; margin-bottom: 30px;">Contact us today for bulk pricing, sample cards, and complete school management setup.</p>
                 
                 <ul class="contact-list">
                     <li class="contact-item">
@@ -681,8 +682,8 @@
             </div>
 
             <div class="school-partner-card">
-                <h4 style="font-size: 20px; margin-bottom: 12px; color: #fff;">Your Trusted School Partner</h4>
-                <p style="color: #cbd5e1; font-size: 14px;">We provide end-to-end identity card solutions and digital software panels for educational institutions.</p>
+                <h4 style="font-size: 22px; margin-bottom: 15px; color: #fff;">Your Trusted School Partner</h4>
+                <p style="color: #cbd5e1; font-size: 14px;">We provide end-to-end identity card solutions and digital software panels for educational institutions across West Bengal.</p>
                 <div class="partner-tags">
                     <span class="tag">Student ID</span>
                     <span class="tag">Staff ID</span>
@@ -693,8 +694,9 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Digital Solution. All Rights Reserved. | Trusted School Partner</p>
+        <p>&copy; 2026 Digital Solution. All Rights Reserved. | Designed for Excellence</p>
     </footer>
 
 </body>
