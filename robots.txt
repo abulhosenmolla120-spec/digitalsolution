@@ -1,0 +1,20 @@
+# [EDIT: ROBOTS CONFIG] এই ফাইল থেকে কোন crawler website crawl করতে পারবে তা নিয়ন্ত্রণ করা যায়।
+User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://digitalsolution.biz/sitemap.xml
